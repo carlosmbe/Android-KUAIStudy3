@@ -9,12 +9,19 @@ android {
     namespace = "edu.ku.kuaistudy3"
     compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true
+    }
+
+
     defaultConfig {
         applicationId = "edu.ku.kuaistudy3"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
+
+        buildConfigField("String", "VERSION_NAME", "\"${versionName}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,6 +48,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-config-ktx:21.4.1")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
